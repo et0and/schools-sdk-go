@@ -7,9 +7,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/schools-go"
-	"github.com/stainless-sdks/schools-go/internal/testutil"
-	"github.com/stainless-sdks/schools-go/option"
+	"github.com/et0and/schools-sdk-go"
+	"github.com/et0and/schools-sdk-go/internal/testutil"
+	"github.com/et0and/schools-sdk-go/option"
 )
 
 func TestUsage(t *testing.T) {

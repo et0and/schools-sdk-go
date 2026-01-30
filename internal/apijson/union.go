@@ -2,7 +2,7 @@ package apijson
 
 import (
 	"errors"
-	"github.com/stainless-sdks/schools-go/packages/param"
+	"github.com/et0and/schools-sdk-go/packages/param"
 	"reflect"
 
 	"github.com/tidwall/gjson"

@@ -1,8 +1,8 @@
 package sentinel_test
 
 import (
-	"github.com/stainless-sdks/schools-go/internal/encoding/json/sentinel"
-	"github.com/stainless-sdks/schools-go/packages/param"
+	"github.com/et0and/schools-sdk-go/internal/encoding/json/sentinel"
+	"github.com/et0and/schools-sdk-go/packages/param"
 	"reflect"
 	"slices"
 	"testing"

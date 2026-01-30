@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/schools-go"
-	"github.com/stainless-sdks/schools-go/internal"
-	"github.com/stainless-sdks/schools-go/option"
+	"github.com/et0and/schools-sdk-go"
+	"github.com/et0and/schools-sdk-go/internal"
+	"github.com/et0and/schools-sdk-go/option"
 )
 
 type closureTransport struct {

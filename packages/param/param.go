@@ -2,7 +2,7 @@ package param
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/schools-go/internal/encoding/json/sentinel"
+	"github.com/et0and/schools-sdk-go/internal/encoding/json/sentinel"
 	"reflect"
 )
 

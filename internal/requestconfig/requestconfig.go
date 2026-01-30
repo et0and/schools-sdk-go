@@ -18,10 +18,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stainless-sdks/schools-go/internal"
-	"github.com/stainless-sdks/schools-go/internal/apierror"
-	"github.com/stainless-sdks/schools-go/internal/apiform"
-	"github.com/stainless-sdks/schools-go/internal/apiquery"
+	"github.com/et0and/schools-sdk-go/internal"
+	"github.com/et0and/schools-sdk-go/internal/apierror"
+	"github.com/et0and/schools-sdk-go/internal/apiform"
+	"github.com/et0and/schools-sdk-go/internal/apiquery"
 )
 
 func getDefaultHeaders() map[string]string {

@@ -13,7 +13,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/stainless-sdks/schools-go/packages/param"
+	"github.com/et0and/schools-sdk-go/packages/param"
 )
 
 var encoders sync.Map // map[encoderEntry]encoderFunc

@@ -1,4 +1,4 @@
-module github.com/stainless-sdks/schools-go
+module github.com/et0and/schools-sdk-go
 
 go 1.22
 

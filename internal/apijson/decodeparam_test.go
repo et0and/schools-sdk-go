@@ -3,8 +3,8 @@ package apijson_test
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/schools-go/internal/apijson"
-	"github.com/stainless-sdks/schools-go/packages/param"
+	"github.com/et0and/schools-sdk-go/internal/apijson"
+	"github.com/et0and/schools-sdk-go/packages/param"
 	"reflect"
 	"testing"
 )
