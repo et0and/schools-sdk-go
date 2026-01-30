@@ -2,7 +2,7 @@ package paramutil
 
 import (
 	"fmt"
-	"github.com/stainless-sdks/schools-go/packages/param"
+	"github.com/et0and/schools-sdk-go/packages/param"
 	"reflect"
 )
 

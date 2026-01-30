@@ -8,10 +8,10 @@ import (
 	"slices"
 	"time"
 
-	"github.com/stainless-sdks/schools-go/internal/apijson"
-	"github.com/stainless-sdks/schools-go/internal/requestconfig"
-	"github.com/stainless-sdks/schools-go/option"
-	"github.com/stainless-sdks/schools-go/packages/respjson"
+	"github.com/et0and/schools-sdk-go/internal/apijson"
+	"github.com/et0and/schools-sdk-go/internal/requestconfig"
+	"github.com/et0and/schools-sdk-go/option"
+	"github.com/et0and/schools-sdk-go/packages/respjson"
 )
 
 // HealthService contains methods and other services that help with interacting

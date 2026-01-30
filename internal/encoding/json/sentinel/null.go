@@ -1,7 +1,7 @@
 package sentinel
 
 import (
-	"github.com/stainless-sdks/schools-go/internal/encoding/json/shims"
+	"github.com/et0and/schools-sdk-go/internal/encoding/json/shims"
 	"reflect"
 	"sync"
 )
