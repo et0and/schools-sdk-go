@@ -8,8 +8,8 @@ import (
 	"os"
 	"slices"
 
-	"github.com/stainless-sdks/schools-go/internal/requestconfig"
-	"github.com/stainless-sdks/schools-go/option"
+	"github.com/et0and/schools-sdk-go/internal/requestconfig"
+	"github.com/et0and/schools-sdk-go/option"
 )
 
 // Client creates a struct with services and top level methods that help with

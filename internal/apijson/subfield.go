@@ -1,7 +1,7 @@
 package apijson
 
 import (
-	"github.com/stainless-sdks/schools-go/packages/respjson"
+	"github.com/et0and/schools-sdk-go/packages/respjson"
 	"reflect"
 )
 

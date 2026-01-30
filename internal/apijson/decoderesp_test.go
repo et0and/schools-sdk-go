@@ -2,8 +2,8 @@ package apijson_test
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/schools-go/internal/apijson"
-	"github.com/stainless-sdks/schools-go/packages/respjson"
+	"github.com/et0and/schools-sdk-go/internal/apijson"
+	"github.com/et0and/schools-sdk-go/packages/respjson"
 	"testing"
 )
 
