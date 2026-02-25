@@ -51,7 +51,7 @@ func (r *SyncService) Trigger(ctx context.Context, opts ...option.RequestOption)
 
 type SyncGetStatusResponse struct {
 	IsStale     bool      `json:"isStale"`
-	LastSync    time.Time `json:"lastSync,nullable" format:"date-time"`
+	LastSync    time.Time `json:"lastSync" api:"nullable" format:"date-time"`
 	RecordCount int64     `json:"recordCount"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
