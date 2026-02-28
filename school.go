@@ -300,7 +300,7 @@ func (r SchoolBySuburbParams) URLQuery() (v url.Values, err error) {
 
 type SchoolSearchParams struct {
 	// Search query
-	Q string `query:"q,required" json:"-"`
+	Q string `query:"q" api:"required" json:"-"`
 	// Results per page (default: 20, max: 100)
 	Limit param.Opt[int64] `query:"limit,omitzero" json:"-"`
 	// Page number (default: 1)
