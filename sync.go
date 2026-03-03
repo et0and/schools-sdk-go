@@ -14,6 +14,8 @@ import (
 	"github.com/et0and/schools-sdk-go/packages/respjson"
 )
 
+// Data sync operations
+//
 // SyncService contains methods and other services that help with interacting with
 // the schools API.
 //
