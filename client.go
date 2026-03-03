@@ -17,10 +17,14 @@ import (
 // directly, and instead use the [NewClient] method instead.
 type Client struct {
 	Options []option.RequestOption
-	Health  HealthService
-	Root    RootService
+	// API health and status
+	Health HealthService
+	// API health and status
+	Root RootService
+	// School data retrieval operations
 	Schools SchoolService
-	Sync    SyncService
+	// Data sync operations
+	Sync SyncService
 }
 
 // DefaultClientOptions read from the environment (SCHOOLS_API_KEY,
