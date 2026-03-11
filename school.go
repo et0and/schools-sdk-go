@@ -44,11 +44,11 @@ func (r *SchoolService) Get(ctx context.Context, schoolID string, opts ...option
 	opts = slices.Concat(r.Options, opts)
 	if schoolID == "" {
 		err = errors.New("missing required schoolId parameter")
-		return
+		return nil, err
 	}
 	path := fmt.Sprintf("v1/schools/id/%s", schoolID)
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, nil, &res, opts...)
-	return
+	return res, err
 }
 
 // Get all schools with filtering
@@ -56,7 +56,7 @@ func (r *SchoolService) List(ctx context.Context, query SchoolListParams, opts .
 	opts = slices.Concat(r.Options, opts)
 	path := "v1/schools"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, &res, opts...)
-	return
+	return res, err
 }
 
 // Get schools by authority
@@ -65,11 +65,11 @@ func (r *SchoolService) ByAuthority(ctx context.Context, authority string, query
 	opts = append([]option.RequestOption{option.WithHeader("Accept", "*/*")}, opts...)
 	if authority == "" {
 		err = errors.New("missing required authority parameter")
-		return
+		return err
 	}
 	path := fmt.Sprintf("v1/schools/authority/%s", authority)
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, nil, opts...)
-	return
+	return err
 }
 
 // Get schools by city
@@ -78,11 +78,11 @@ func (r *SchoolService) ByCity(ctx context.Context, city string, query SchoolByC
 	opts = append([]option.RequestOption{option.WithHeader("Accept", "*/*")}, opts...)
 	if city == "" {
 		err = errors.New("missing required city parameter")
-		return
+		return err
 	}
 	path := fmt.Sprintf("v1/schools/city/%s", city)
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, nil, opts...)
-	return
+	return err
 }
 
 // Get schools by status
@@ -91,11 +91,11 @@ func (r *SchoolService) ByStatus(ctx context.Context, status string, query Schoo
 	opts = append([]option.RequestOption{option.WithHeader("Accept", "*/*")}, opts...)
 	if status == "" {
 		err = errors.New("missing required status parameter")
-		return
+		return err
 	}
 	path := fmt.Sprintf("v1/schools/status/%s", status)
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, nil, opts...)
-	return
+	return err
 }
 
 // Get schools by suburb
@@ -104,11 +104,11 @@ func (r *SchoolService) BySuburb(ctx context.Context, suburb string, query Schoo
 	opts = append([]option.RequestOption{option.WithHeader("Accept", "*/*")}, opts...)
 	if suburb == "" {
 		err = errors.New("missing required suburb parameter")
-		return
+		return err
 	}
 	path := fmt.Sprintf("v1/schools/suburb/%s", suburb)
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, nil, opts...)
-	return
+	return err
 }
 
 // Full-text search schools by name
@@ -116,7 +116,7 @@ func (r *SchoolService) Search(ctx context.Context, query SchoolSearchParams, op
 	opts = slices.Concat(r.Options, opts)
 	path := "v1/schools/search"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, &res, opts...)
-	return
+	return res, err
 }
 
 type SchoolGetResponse struct {
