@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"slices"
+	"strings"
 
 	"github.com/et0and/schools-sdk-go/internal/requestconfig"
 	"github.com/et0and/schools-sdk-go/option"
@@ -17,21 +18,33 @@ import (
 // directly, and instead use the [NewClient] method instead.
 type Client struct {
 	Options []option.RequestOption
-	Health  HealthService
-	Root    RootService
+	// API health and status
+	Health HealthService
+	// API health and status
+	Root RootService
+	// School data retrieval operations
 	Schools SchoolService
-	Sync    SyncService
+	// Data sync operations
+	Sync SyncService
 }
 
 // DefaultClientOptions read from the environment (SCHOOLS_API_KEY,
 // SCHOOLS_BASE_URL). This should be used to initialize new clients.
 func DefaultClientOptions() []option.RequestOption {
-	defaults := []option.RequestOption{option.WithEnvironmentProduction()}
+	defaults := []option.RequestOption{option.WithHTTPClient(defaultHTTPClient()), option.WithEnvironmentProduction()}
 	if o, ok := os.LookupEnv("SCHOOLS_BASE_URL"); ok {
 		defaults = append(defaults, option.WithBaseURL(o))
 	}
 	if o, ok := os.LookupEnv("SCHOOLS_API_KEY"); ok {
 		defaults = append(defaults, option.WithAPIKey(o))
+	}
+	if o, ok := os.LookupEnv("SCHOOLS_CUSTOM_HEADERS"); ok {
+		for _, line := range strings.Split(o, "\n") {
+			colon := strings.Index(line, ":")
+			if colon >= 0 {
+				defaults = append(defaults, option.WithHeader(strings.TrimSpace(line[:colon]), strings.TrimSpace(line[colon+1:])))
+			}
+		}
 	}
 	return defaults
 }

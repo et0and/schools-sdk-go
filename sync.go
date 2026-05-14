@@ -14,6 +14,8 @@ import (
 	"github.com/et0and/schools-sdk-go/packages/respjson"
 )
 
+// Data sync operations
+//
 // SyncService contains methods and other services that help with interacting with
 // the schools API.
 //
@@ -38,7 +40,7 @@ func (r *SyncService) GetStatus(ctx context.Context, opts ...option.RequestOptio
 	opts = slices.Concat(r.Options, opts)
 	path := "v1/sync/status"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, nil, &res, opts...)
-	return
+	return res, err
 }
 
 // Trigger manual data sync
@@ -46,7 +48,7 @@ func (r *SyncService) Trigger(ctx context.Context, opts ...option.RequestOption)
 	opts = slices.Concat(r.Options, opts)
 	path := "v1/sync"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodPost, path, nil, &res, opts...)
-	return
+	return res, err
 }
 
 type SyncGetStatusResponse struct {

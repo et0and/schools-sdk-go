@@ -13,6 +13,8 @@ import (
 	"github.com/et0and/schools-sdk-go/packages/respjson"
 )
 
+// API health and status
+//
 // RootService contains methods and other services that help with interacting with
 // the schools API.
 //
@@ -37,7 +39,7 @@ func (r *RootService) Get(ctx context.Context, opts ...option.RequestOption) (re
 	opts = slices.Concat(r.Options, opts)
 	path := ""
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, nil, &res, opts...)
-	return
+	return res, err
 }
 
 type RootGetResponse struct {
